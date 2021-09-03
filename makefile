@@ -7,7 +7,6 @@ prepare:
 	@sudo systemctl enable --now docker
 up: prepare
 	@echo "\n___________________container starting______________________\n"
-	@#! /bin/bash
 	@if [ ! -d docker ]; then\
 		mkdir docker;\
 		if [ ! -d www ]; then\
