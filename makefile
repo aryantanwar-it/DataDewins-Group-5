@@ -20,11 +20,10 @@ up: prepare
 #	@sudo cd ../../ ;
 	@sudo cp ./index.php ./docker/www/;
 	@sudo docker-compose up -d
-	@echo "\n__________Wait for 12 seconds_____________\n"
-	@echo "\n________Write 'make teardown' to remove containers_____\n"
-teardown: down
+	@echo "\n__________Wait for 15 seconds_____________\n"
+teardown:
 	@echo "\n_______________Removing Containers and Files__________\n"
-	@sudo docker rm apa db
+	@sudo docker-compose down
 	@sudo rm -r ./docker
 down:
 	@echo "\n________________stopping containers________________\n"
